@@ -1,13 +1,31 @@
 
 # Neutralino.js hello world
 
+```
+cd ~/src/
+git clone https://github.com/ijl20/neutralino_hello_world
+```
+
 https://neutralino.js.org/
 
-## Netralino.js install
+## Neutralino.js install
 
 Assumes node/npm installed with
 ```
 sudo apt install nodejs
+node --version
+```
+Node is possibly not a sufficiently recent release. If so:
+```
+npm cache clean -f
+sudo npm install -g n
+sudo n stable
+node --version
+```
+
+Install npm if it is not installed already:
+```
+which npm
 sudo apt install npm
 ```
 
@@ -19,21 +37,28 @@ isn't necessary. In this case the `node_modules` directory is local to the dev d
 `PATH`.
 
 ```
+cd ~
 mkdir neutralinojs
 cd neutralinojs/
 npm install @neutralinojs/neu
+```
+
+The neutralino commands are now run with e.g.:
+```
+~/neutralinojs/node_modules/.bin/neu run
 ```
 
 ## Init a new application
 
 This will create a simple app with html, css and js files as a working template that can be editted.
 ```
-./node_modules/.bin/neu create neutralino_hello_world
+cd ~/src/neutralino_hello_world
+~/neutralinojs/node_modules/.bin/neu create neutralino_hello_world
 ```
 Test run with
 ```
 cd neutralino_hello_world
-../node_modules/.bin/neu run
+~/neutralinojs/node_modules/.bin/neu run
 ```
 
 ## Edit the source code for your app
